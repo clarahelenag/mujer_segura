@@ -1,0 +1,156 @@
+  [1m[35m (333.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (246.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5722547583434618055)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Migrating to CreateCentros (20180903044000)
+  [1m[35m (32.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (153.4ms)[0m  [1m[35mCREATE TABLE "centros" ("id" bigserial primary key, "nombre" character varying, "descripcion" character varying, "url" character varying, "latitud" character varying, "longitud" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180903044000_create_centros.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (24.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180903044000"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (5.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-03 05:39:58.844627"], ["updated_at", "2018-09-03 05:39:58.844627"]]
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5722547583434618055)[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/bin/rake:23
+Started GET "/centros" for 127.0.0.1 at 2018-09-03 00:46:34 -0500
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CentrosController#index as HTML
+  Rendering centros/index.html.erb within layouts/application
+  [1m[36mCentro Load (6.1ms)[0m  [1m[34mSELECT "centros".* FROM "centros"[0m
+  ↳ app/views/centros/index.html.erb:18
+  Rendered centros/index.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 5016ms (Views: 4882.5ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/centros/new" for 127.0.0.1 at 2018-09-03 00:49:39 -0500
+Processing by CentrosController#new as HTML
+  Rendering centros/new.html.erb within layouts/application
+  Rendered centros/_form.html.erb (2044.6ms)
+  Rendered centros/new.html.erb within layouts/application (2118.8ms)
+Completed 200 OK in 2845ms (Views: 2640.0ms | ActiveRecord: 36.0ms)
+
+
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCentro Create (7.7ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Fundacion de la Mujer"], ["descripcion", "Principal institución microfinanciera no regulada de Colombia, está\ncomprometida con el mejoramiento de la calidad de vida y el progreso de los negocios de sus clientes."], ["url", "https://www.fundaciondelamujer.com/"], ["latitud", "4.653594"], ["longitud", "-74.060979"], ["created_at", "2018-09-03 05:53:31.961306"], ["updated_at", "2018-09-03 05:53:31.961306"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (52.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCentro Create (1.4ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Secretaria de la Mujer"], ["descripcion", "Tiene por objeto liderar, dirigir,\ncoordinar, articular y ejecutar las etapas de diseño, formulación,  implementación, seguimiento y evaluación de políticas\npúblicas para las mujeres, a través de la coordinación intra e intersectorial, territorial y poblacional de estas políticas\npúblicas, así como de los planes, programas y proyectos que le corresponda para el reconocimiento, garantía y restitución\nde los derechos y el fomento de las capacidades y oportunidades de las mujeres."], ["url", "http://www.sdmujer.gov.co/"], ["latitud", "4.659553"], ["longitud", "-74.105907"], ["created_at", "2018-09-03 05:53:32.032759"], ["updated_at", "2018-09-03 05:53:32.032759"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCentro Create (1.5ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Sisma Mujer"], ["descripcion", "En Sisma Mujer brindamos asesoría en casos de violencia sexual, violencia\ndoméstica y asesinato de mujeres por el hecho de serlo (feminicidios), tanto en espacios cotidianos como derivados del conflicto armado."], ["url", "http://www.sdmujer.gov.co/"], ["latitud", "4.621231"], ["longitud", "-74.068154"], ["created_at", "2018-09-03 05:53:32.044797"], ["updated_at", "2018-09-03 05:53:32.044797"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mCentro Create (1.7ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Casa de Igualdad de Oportunidades de Chapinero"], ["descripcion", "Empoderamiento de las mujeres en el ejercicio de\nsus derechos.Fortalecimiento a grupos, redes y organizaciones de mujeres y de las instancias de coordinación de\nla PPMYEG en el nivel local.Prevención y atención de Violencias contra las mujeres. Orientación y\nacercamiento a la oferta institucional.Territorialización de PIOEG."], ["url", "http://www.sdmujer.gov.co/component/content/article/2-uncategorised/42-casas-de-igualdad-y-oportunidades"], ["latitud", "4.641075"], ["longitud", "-74.063846"], ["created_at", "2018-09-03 05:53:32.057889"], ["updated_at", "2018-09-03 05:53:32.057889"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCentro Create (1.5ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "CIASE"], ["descripcion", "Es una organización feminista mixta, que promueve la exigibilidad permanente y la realización integral\nde los Derechos Humanos en particular los derechos económicos, sociales, culturales y ambientales."], ["url", "http://ciase.org/es/"], ["latitud", "4.628577"], ["longitud", "-74.069373"], ["created_at", "2018-09-03 05:53:32.077637"], ["updated_at", "2018-09-03 05:53:32.077637"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mCentro Create (1.6ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Iniciativa Mujeres Colombianas por la Paz"], ["descripcion", "Contribuir a la contrucción de la paz desde la\ndefensa de los derechos humanos con enfoque de género y con especial énfasis en las mujeres."], ["url", "http://www.mujeresporlapaz.org/"], ["latitud", "4.660718"], ["longitud", "-74.063273"], ["created_at", "2018-09-03 05:53:32.100903"], ["updated_at", "2018-09-03 05:53:32.100903"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mCentro Create (1.5ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "CENTRAP"], ["descripcion", "La Corporación CENTRAP es una\norganización no gubernamental sin ánimo de lucro que busca contribuir al desarrollo justo, sustentable y democrático de la\nsociedad colombiana con perspectiva de inclusión social en equidad entre géneros, clases y étnias, por medio de la\ninvestigación, fortalecimiento organizacional, la formación y la sistematización; en las áreas de participación política y\nciudadanía, género y desarrollo, manejo sustentable del medio ambiente y emprendimientos económicos en comunidades rurales\ny urbanas del país."], ["url", "http://centrap.org.co/"], ["latitud", "4.633830"], ["longitud", "-74.063619"], ["created_at", "2018-09-03 05:53:32.113692"], ["updated_at", "2018-09-03 05:53:32.113692"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mCentro Create (1.3ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Red Nacional de Mujeres"], ["descripcion", "Hemos tenido presencia en diversos procesos en pro de la garantía, promoción y defensa de los derechos\nde las mujeres en Colombia, sin embargo nuestro trabajo se ha centrado en tres ejes específicos: participación política y\nconstrucción de ciudadanía de las mujeres, eliminación de las diferentes violencias ejercidas contra las mujeres, y\nparticipación de las mujeres en procesos y construcción de paz."], ["url", "https://www.rednacionaldemujeres.org/"], ["latitud", "4.640889"], ["longitud", "-74.064801"], ["created_at", "2018-09-03 05:53:32.125530"], ["updated_at", "2018-09-03 05:53:32.125530"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mCentro Create (1.4ms)[0m  [1m[32mINSERT INTO "centros" ("nombre", "descripcion", "url", "latitud", "longitud", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nombre", "Ruta Pacifica"], ["descripcion", "La Ruta Pacífica de las Mujeres es un movimiento\nfeminista que trabaja por la tramitación negociada del conflicto armado en Colombia"], ["url", "http://rutapacifica.org.co/"], ["latitud", "4.644695"], ["longitud", "-74.079842"], ["created_at", "2018-09-03 05:53:32.136485"], ["updated_at", "2018-09-03 05:53:32.136485"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+Started GET "/centros" for 127.0.0.1 at 2018-09-03 00:56:04 -0500
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CentrosController#index as HTML
+  Rendering centros/index.html.erb within layouts/application
+  [1m[36mCentro Load (3.3ms)[0m  [1m[34mSELECT "centros".* FROM "centros"[0m
+  ↳ app/views/centros/index.html.erb:18
+  Rendered centros/index.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 1555ms (Views: 1345.7ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/centros/1" for 127.0.0.1 at 2018-09-03 00:56:18 -0500
+Processing by CentrosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCentro Load (3.1ms)[0m  [1m[34mSELECT  "centros".* FROM "centros" WHERE "centros"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/centros_controller.rb:67
+  Rendering centros/show.html.erb within layouts/application
+  Rendered centros/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 583ms (Views: 504.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/centros/1/edit" for 127.0.0.1 at 2018-09-03 00:56:26 -0500
+Processing by CentrosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCentro Load (1.2ms)[0m  [1m[34mSELECT  "centros".* FROM "centros" WHERE "centros"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/centros_controller.rb:67
+  Rendering centros/edit.html.erb within layouts/application
+  Rendered centros/_form.html.erb (1821.2ms)
+  Rendered centros/edit.html.erb within layouts/application (1881.7ms)
+Completed 200 OK in 2486ms (Views: 2429.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/centros.json" for 127.0.0.1 at 2018-09-03 01:10:11 -0500
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CentrosController#index as JSON
+  Rendering centros/index.json.jbuilder
+  [1m[36mCentro Load (3.2ms)[0m  [1m[34mSELECT "centros".* FROM "centros"[0m
+  ↳ app/views/centros/index.json.jbuilder:1
+  Rendered centros/_centro.json.jbuilder (2.8ms)
+  Rendered centros/_centro.json.jbuilder (0.8ms)
+  Rendered centros/_centro.json.jbuilder (0.9ms)
+  Rendered centros/_centro.json.jbuilder (2.6ms)
+  Rendered centros/_centro.json.jbuilder (1.1ms)
+  Rendered centros/_centro.json.jbuilder (1.2ms)
+  Rendered centros/_centro.json.jbuilder (1.1ms)
+  Rendered centros/_centro.json.jbuilder (1.1ms)
+  Rendered centros/_centro.json.jbuilder (1.2ms)
+  Rendered centros/index.json.jbuilder (227.5ms)
+Completed 200 OK in 490ms (Views: 378.4ms | ActiveRecord: 22.1ms)
+
+

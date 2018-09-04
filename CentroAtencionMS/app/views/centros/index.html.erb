@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Centros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Url</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @centros.each do |centro| %>
+      <tr>
+        <td><%= centro.nombre %></td>
+        <td><%= centro.descripcion %></td>
+        <td><%= centro.url %></td>
+        <td><%= centro.latitud %></td>
+        <td><%= centro.longitud %></td>
+        <td><%= link_to 'Show', centro %></td>
+        <td><%= link_to 'Edit', edit_centro_path(centro) %></td>
+        <td><%= link_to 'Destroy', centro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Centro', new_centro_path %>

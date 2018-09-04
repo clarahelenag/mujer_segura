@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @centro.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @centro.descripcion %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @centro.url %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @centro.latitud %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @centro.longitud %>
+</p>
+
+<%= link_to 'Edit', edit_centro_path(@centro) %> |
+<%= link_to 'Back', centros_path %>
